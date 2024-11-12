@@ -1,0 +1,55 @@
+{"Text1" : "Hello" , "Text2" : "GoodBye", "Num1" : 5, "Array1" : [7,8,9]}
+{"Text1" : "This" , "Text2" : "That", "Num1" : 6.5, "Array1" : [70,88,91]}
+{"Text1" : "Yes" , "Text2" : "No", "Num1" : 2, "Array1" : [1,2,3]}
+
+
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+
+
+location_data = [(1700,"INDIA"),(1800,"USA")]
+
+schema = StructType([StructField("LOCATION_ID",IntegerType(),True),StructField("LOCATION_NAME",StringType(),True)])
+
+
+locDf = spark.createDataFrame(data=location_data,schema=schema)
+
+
+cluster
+spark UI
+
+git intergeration
+databricks cli backup process setup
+delta lake - , unity catalg , data governance 
+Databircks vieww
+managed and unmanaged table
+JDBC connector for sql - 
+task orchestartion - ariflow 
+
+
+
+pip install pyspark
+sudo update-alternatives --config java
+
+
+
+pyspark --master local[*]
+
+>>> from pyspark.sql import SparkSession
+>>> spark = SparkSession.builder.appName("SimpleApp").getOrCreate()
+24/09/08 14:14:49 WARN SparkSession: Using an existing Spark session; only runtime SQL configurations will take effect.
+>>> data = [("John", 28), ("Doe", 35)]
+>>> columns = ["Name", "Age"]
+>>> df = spark.createDataFrame(data, schema=columns)
+>>> df.show()
++----+---+                                                                      
+|Name|Age|
++----+---+
+|John| 28|
+| Doe| 35|
++----+---+
+
+
+Application  - sparksubmit command to cluster  to run job is call application
+job - each action is called job
+stage - no. of transformations is called stage
+task - actual execution is called task
